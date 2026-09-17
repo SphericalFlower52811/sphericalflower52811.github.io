@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="device-width, initial-scale=1" />
+    <title>SphericaLFlower52811</title>
+  </head>
+  <body>
+    <div id="syncerror" style="display: none">
+      actual portfolio here:
+      <a href="https://sphericalflower52811.pages.dev"
+        >sphericalflower52811.pages.dev</a
+      >
+    </div>
+    <script>
+      async function syncportfolio() {
+        const fallbackdiv = document.getElementById("syncerror");
+        // give 5sec to sync portfolio
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        try {
+          const response = await fetch(
+            "https://sphericalflower52811.pages.dev",
+            {
+              signal: controller.signal,
+            },
+          );
+          if (!response.ok) throw new Error("portfolio sync failed");
+          clearTimeout(timeoutId);
+          const portfoliohtml = await response.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(portfoliohtml, "text/html");
+
+          document.body.innerHTML = doc.body.innerHTML;
+        } catch (error) {
+          console.log("error:", error);
+          fallbackdiv.style.display = "block";
+        }
+      }
+      window.addEventListener("DOMContentLoaded", syncportfolio);
+    </script>
+  </body>
+</html>
