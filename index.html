@@ -2,42 +2,70 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>SphericalFlower52811 portfolio</title>
   </head>
   <body>
-    <div id="syncerror" style="display: none">
-      actual portfolio here:
-      <a href="https://sphericalflower52811.pages.dev"
-        >sphericalflower52811.pages.dev</a
-      >
-    </div>
-    <script>
-      async function syncportfolio() {
-        const fallbackdiv = document.getElementById("syncerror");
-        // give 5sec to sync portfolio
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 5000);
-        try {
-          const response = await fetch(
-            "https://sphericalflower52811.pages.dev",
-            {
-              signal: controller.signal,
-            },
-          );
-          if (!response.ok) throw new Error("portfolio sync failed");
-          clearTimeout(timeoutId);
-          const portfoliohtml = await response.text();
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(portfoliohtml, "text/html");
+    <h1>SphericalFlower52811</h1>
+    <p>I'm a student who likes cybersecurity. this is my portfolio</p>
+    <details>
+      <summary><b>my social medias</b></summary>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/SphericalFlower52811"
+            target="_blank"
+            rel="noopener"
+            >Github</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://linkedin.com/in/xaviernai"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+        </li>
+        <li>
+          <a
+            href="mailto:sphericalflower52811@gmail.com"
+            target="_blank"
+            rel="noopener"
+            >Email</a
+          >
+        </li>
+      </ul>
+    </details>
+    <details>
+      <summary>
+        <b>my projects</b>
+      </summary>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/SphericalFlower52811/endpointscanner"
+            target="_blank"
+            rel="noopener"
+            >endpointscanner</a
+          >
+        </li>
 
-          document.body.innerHTML = doc.body.innerHTML;
-        } catch (error) {
-          console.log("error:", error);
-          fallbackdiv.style.display = "block";
-        }
-      }
-      window.addEventListener("DOMContentLoaded", syncportfolio);
-    </script>
+        <li>
+          <a
+            href="https://github.com/SphericalFlower52811/clhostmap"
+            target="_blank"
+            rel="noopener"
+            >clhostmap</a
+          >
+        </li>
+      </ul>
+    </details>
+    <details>
+      <summary><b>achievements</b></summary>
+      <ul>
+        <li>top 10 in YCEP singapore individual central ctf (national CTF)</li>
+      </ul>
+    </details>
   </body>
 </html>
