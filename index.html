@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="SphericalFlower52811 portfolio website" />
+    <meta
+      name="google-site-verification"
+      content="ZBfSKpFiBkoLnTXVwx1zbUvkSrrJljpQOP1eDfLQnew"
+    />
+    <title>SphericalFlower52811 portfolio</title>
+    <link rel="canonical" href="https://sphericalflower52811.github.io" />
+  </head>
+  <body>
+    <h1>SphericalFlower52811</h1>
+    <p>I'm a student who likes cybersecurity. this is my portfolio</p>
+    <details>
+      <summary><b>my social medias</b></summary>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/SphericalFlower52811"
+            target="_blank"
+            rel="noopener"
+            >Github</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://linkedin.com/in/xaviernai"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+        </li>
+        <li>
+          <a
+            href="mailto:sphericalflower52811@gmail.com"
+            target="_blank"
+            rel="noopener"
+            >Email</a
+          >
+        </li>
+      </ul>
+    </details>
+    <details>
+      <summary>
+        <b>my projects</b>
+      </summary>
+      <ul>
+        <li>
+          <a
+            href="https://github.com/SphericalFlower52811/endpointscanner"
+            target="_blank"
+            rel="noopener"
+            >endpointscanner</a
+          >
+          <ul>
+            <li>
+              Extremely accurate website reconnaissance tool made with Python,
+              made for cybersecurity red teaming to scan modern websites.
+            </li>
+            <li>
+              Scrapes website JavaScript files to find paths in the website, and
+              includes built-in path normalization by changing paths with
+              variables like ${var} with 1, or a string of your choice.
+            </li>
+            <li>
+              Includes a built-in customisable rate limit tester for any
+              endpoint of your choice.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://github.com/SphericalFlower52811/clhostmap"
+            target="_blank"
+            rel="noopener"
+            >clhostmap</a
+          >
+          <ul>
+            <li>
+              Tool to check if your website has been impersonated by malicious
+              actors on domains with different TLDs or on different hosting
+              providers (e.g. Vercel/Netlify).
+            </li>
+            <li>
+              Contains every TLD and 60+ cloud hosts (e.g. .vercel.app and
+              .pages.dev)
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+    <details>
+      <summary><b>achievements</b></summary>
+      <ul>
+        <li>
+          <b>Security Audits</b>
+          <br />
+          <small>
+            <i
+              >NOTICE: THESE AUDITS WERE ALL DONE WITH PERMISSION FROM THE
+              DEVELOPERS OF THE WEBSITES.</i
+            >
+          </small>
+          <br />
+          <b>
+            Github repo of writeups on vulnerabilities can be found at
+            <a
+              href="https://github.com/SphericalFlower52811/cybersec"
+              target="_blank"
+              rel="noopener"
+              >Cybersec Repo</a
+            >.
+          </b>
+          <br />
+          <br />
+          <details>
+            <summary>
+              Performed security audit on my friend's website (which he asked to
+              keep anonymous). Click for total findings:
+            </summary>
+            <ul>
+              <li>
+                Python interpreter had a misconfigured Docker and gave every
+                user root permissions, allowing me to mount it and gain RCE.
+              </li>
+              <li>
+                Path to admin panel which was /admin/api/${userId} (I do not
+                remember the exact variable name) trusted the client's request
+                without proper authentication,<br />
+                allowing me to access the admin panel by simply changing the
+                request.
+              </li>
+              <li>
+                No rate limiting on all endpoints like /login, /register,
+                /projects and more, providing many endpoints vulnerable to a
+                DoS.
+              </li>
+              <br />
+            </ul>
+          </details>
+          <details>
+            <summary>
+              Performed security audit on my teacher's website, that just
+              belongs to my teacher as an individual not the school's website.
+              (anonymous because I haven't asked if I can actually put the
+              website publicly) Click for total findings:
+            </summary>
+            <ul>
+              <li>
+                Multiple endpoints like /users/profile, /auth/login had a lack
+                of rate-limiting, making them vulnerable to a potential DoS via
+                resource exhaustion.
+              </li>
+              <li>
+                Prompt injection in a quiz question translation feature,
+                allowing the AI translator to solve questions for you, and
+                passing a large prompt could potentially slow the website down
+                or even cause a DoS.
+              </li>
+              <li>
+                Time taken for a question (this website contained quizzes) is
+                passed by the client, allowing users to put 1 second in a
+                modified request and the website would trust it.
+              </li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <b>CTFs</b>
+          <ul>
+            <li>
+              top 6 in YCEP local to Singapore Polytechnic (not national, but
+              got me into the national ctf)
+            </li>
+            <li>
+              top 10 in YCEP singapore individual central ctf (national CTF)
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b>Certs</b>
+          <ul>
+            <li>Cisco Introduction to Cybersecurity</li>
+            <li>Cisco Python Essentials</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+  </body>
+</html>
